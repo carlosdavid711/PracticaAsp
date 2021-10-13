@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Terceintento.Models.Asignaciones>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Estudiante.PrimerNombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Maestro.PrimerNombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CursoID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estudiante.PrimerNombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Maestro.PrimerNombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CursoID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
